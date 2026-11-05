@@ -12,8 +12,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from Freyr_10_1_WiFi device
-$(call inherit-product, device/tcl/Freyr_10_1_WiFi/device.mk)
+# Inherit from 8492A device
+$(call inherit-product, device/tcl/8492A/device.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
