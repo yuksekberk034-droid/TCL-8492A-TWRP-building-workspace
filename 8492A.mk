@@ -18,7 +18,7 @@ $(call inherit-product, device/tcl/8492A/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 PRODUCT_DEVICE := 8492A
-PRODUCT_NAME := 8492A
+PRODUCT_NAME := twrp_8492A
 PRODUCT_BRAND := TCL
 PRODUCT_MODEL := TCL Tab 10L Gen 2
 PRODUCT_MANUFACTURER := TCL
