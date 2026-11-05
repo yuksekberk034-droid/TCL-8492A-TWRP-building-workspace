@@ -50,7 +50,7 @@ jobs:
         cd ~/twrp
         export ALLOW_MISSING_DEPENDENCIES=true
         source build/envsetup.sh
-        lunch twrp_8492A-eng
+        lunch 8492A-eng
         mka bootimage
 
     - name: Upload Output
