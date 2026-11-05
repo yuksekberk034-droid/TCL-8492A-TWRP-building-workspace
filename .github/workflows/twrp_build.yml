@@ -9,21 +9,33 @@ jobs:
     
     steps:
     - name: Checkout Device Tree
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: device/tcl/8492A
 
-    - name: Set up Build Environment
+    - name: Set up Build Environment & Install Repo
       run: |
         sudo apt-get update
         sudo apt-get install -y git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+        
+        # Install repo binary
+        mkdir -p ~/bin
+        curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+        chmod a+x ~/bin/repo
+        sudo ln -sf ~/bin/repo /usr/bin/repo
+        
+        # Configure Git identity (Required for repo init)
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
 
     - name: Initialize TWRP Workspace
       run: |
         mkdir ~/twrp
         cd ~/twrp
         repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-        repo sync -j$(nproc --all)
+        
+        # Optimized sync to prevent GitHub runner disk space exhaustion
+        repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
     - name: Copy Device Tree
       run: |
@@ -38,7 +50,9 @@ jobs:
         mka bootimage
 
     - name: Upload Output
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: TWRP-8492A-boot
-        path: ~/twrp/out/target/product/8492A/boot.img
+        # Use absolute path for upload-artifact compatibility
+        path: /home/runner/twrp/out/target/product/8492A/boot.img
+        if-no-files-found: warn
