@@ -113,3 +113,12 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# Size Reduction Flags
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXTRA_LANGUAGES := false
+TW_INCLUDE_PYTHON := false
+TW_EXCLUDE_NANO := true
+TW_EXCLUDE_TWRPAPP := true
+TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_FUSE_NTFS := false # Disable NTFS if you only use FAT32/exFAT OTG/SD cards
