@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_Freyr_10_1_WiFi.mk
+    $(LOCAL_DIR)/8492A.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_Freyr_10_1_WiFi-user \
-    twrp_Freyr_10_1_WiFi-userdebug \
-    twrp_Freyr_10_1_WiFi-eng
+    8492A-user \
+    8492A-userdebug \
+    8492A-eng
