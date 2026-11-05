@@ -9,6 +9,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/8492A.mk
 
 COMMON_LUNCH_CHOICES := \
-    8492A-user \
-    8492A-userdebug \
-    8492A-eng
+    twrp_8492A-user \
+    twrp_8492A-userdebug \
+    twrp_8492A-eng
