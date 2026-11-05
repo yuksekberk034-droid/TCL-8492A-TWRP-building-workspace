@@ -15,11 +15,13 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from Freyr_10_1_WiFi device
 $(call inherit-product, device/tcl/Freyr_10_1_WiFi/device.mk)
 
-PRODUCT_DEVICE := Freyr_10_1_WiFi
-PRODUCT_NAME := twrp_Freyr_10_1_WiFi
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+
+PRODUCT_DEVICE := 8492A
+PRODUCT_NAME := 8492A
 PRODUCT_BRAND := TCL
-PRODUCT_MODEL := 8492A
-PRODUCT_MANUFACTURER := tcl
+PRODUCT_MODEL := TCL Tab 10L Gen 2
+PRODUCT_MANUFACTURER := TCL
 
 PRODUCT_GMS_CLIENTID_BASE := android-tcl
 
