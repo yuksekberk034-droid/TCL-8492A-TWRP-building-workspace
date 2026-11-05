@@ -9,14 +9,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common twrp stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from Freyr_10_1_WiFi device
 $(call inherit-product, device/tcl/Freyr_10_1_WiFi/device.mk)
 
 PRODUCT_DEVICE := Freyr_10_1_WiFi
-PRODUCT_NAME := omni_Freyr_10_1_WiFi
+PRODUCT_NAME := twrp_Freyr_10_1_WiFi
 PRODUCT_BRAND := TCL
 PRODUCT_MODEL := 8492A
 PRODUCT_MANUFACTURER := tcl
