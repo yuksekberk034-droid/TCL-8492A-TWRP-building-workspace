@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/tcl/Freyr_10_1_WiFi
+DEVICE_PATH := device/tcl/8492A
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
