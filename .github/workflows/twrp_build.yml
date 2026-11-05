@@ -1,0 +1,44 @@
+name: Build TWRP for TCL 8492A
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    
+    steps:
+    - name: Checkout Device Tree
+      uses: actions/checkout@v3
+      with:
+        path: device/tcl/8492A
+
+    - name: Set up Build Environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
+
+    - name: Initialize TWRP Workspace
+      run: |
+        mkdir ~/twrp
+        cd ~/twrp
+        repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+        repo sync -j$(nproc --all)
+
+    - name: Copy Device Tree
+      run: |
+        cp -r $GITHUB_WORKSPACE/device ~/twrp/
+
+    - name: Build TWRP (A/B Boot Image)
+      run: |
+        cd ~/twrp
+        export ALLOW_MISSING_DEPENDENCIES=true
+        source build/envsetup.sh
+        lunch omni_8492A-eng
+        mka bootimage
+
+    - name: Upload Output
+      uses: actions/upload-artifact@v3
+      with:
+        name: TWRP-8492A-boot
+        path: ~/twrp/out/target/product/8492A/boot.img
