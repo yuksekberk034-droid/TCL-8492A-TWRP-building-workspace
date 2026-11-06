@@ -123,3 +123,11 @@ TW_EXCLUDE_NANO := true
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := false # Disable NTFS if you only use FAT32/exFAT OTG/SD cards
+
+# Enable TWRP's static boot control logic
+TW_INCLUDE_CRYPTO := false # Set to true if you are handling decryption later
+PRODUCT_STATIC_BOOT_CONTROL_HAL := bootctrl.mt6761
+
+TW_EXCLUDE_APEX := true
+TW_INCLUDE_RECOVERY_INPUT := true
+
