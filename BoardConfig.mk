@@ -138,11 +138,3 @@ TW_INCLUDE_RECOVERY_INPUT := true
 # Direct path tracking for TWRP relink logic
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
     $(TARGET_OUT_EXECUTABLES)/bootctl
-
-# Tell the recovery engine to compile and bundle the boot HAL
-TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.boot@1.0-impl.recovery \
-    android.hardware.boot@1.0-service \
-    bootctrl.mt6761.recovery \
-    bootctl
-
