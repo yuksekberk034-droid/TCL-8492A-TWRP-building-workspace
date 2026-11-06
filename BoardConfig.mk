@@ -132,9 +132,6 @@ BOARD_USES_METADATA_ENCRYPTION := true
 # Optional: Force use of system vold binaries for complex MediaTek keymaster interactions if decryption fails later
 # TW_CRYPTO_USE_SYSTEM_VOLD := true
 
-TW_EXCLUDE_APEX := true
-TW_INCLUDE_RECOVERY_INPUT := true
-
 # Direct path tracking for TWRP relink logic
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
     $(TARGET_OUT_EXECUTABLES)/bootctl
