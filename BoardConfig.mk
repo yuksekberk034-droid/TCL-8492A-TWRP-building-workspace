@@ -124,8 +124,13 @@ TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := false # Disable NTFS if you only use FAT32/exFAT OTG/SD cards
 
-# Enable TWRP's static boot control logic
-TW_INCLUDE_CRYPTO := false # Set to true if you are handling decryption later
+# --- File-Based Encryption (FBE) & Metadata Support ---
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+BOARD_USES_METADATA_ENCRYPTION := true
+
+# Optional: Force use of system vold binaries for complex MediaTek keymaster interactions if decryption fails later
+# TW_CRYPTO_USE_SYSTEM_VOLD := true
 
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_RECOVERY_INPUT := true
