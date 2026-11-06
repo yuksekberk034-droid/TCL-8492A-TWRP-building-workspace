@@ -1,6 +1,5 @@
 soong_namespace {
     imports: [
-        "hardware/mediatek",
         "hardware/interfaces",
         "device/tcl/Freyr_10_1_WiFi",
     ],
