@@ -130,3 +130,6 @@ TW_INCLUDE_CRYPTO := false # Set to true if you are handling decryption later
 TW_EXCLUDE_APEX := true
 TW_INCLUDE_RECOVERY_INPUT := true
 
+# Direct path tracking for TWRP relink logic
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/bootctl
