@@ -19,6 +19,14 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     bootctl \
 
+# Force the system to compile recovery-specific variants of the HAL and tool
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.boot@1.0-impl.recovery \
+    android.hardware.boot@1.0-service \
+    bootctrl.mt6761.recovery \
+    bootctl
+
+
 PRODUCT_PACKAGES += \
     bootctrl.mt6761
 
