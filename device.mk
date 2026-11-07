@@ -13,11 +13,14 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+# Include bootctl binary
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service \
-    bootctl 
+    bootctl
+
+# Include Android 13 Boot HAL (AIDL is standard, adjust if your stock ROM uses HIDL 1.2)
+PRODUCT_PACKAGES += \
+    android.hardware.boot-service.default \
+    android.hardware.boot-service.default.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6761
