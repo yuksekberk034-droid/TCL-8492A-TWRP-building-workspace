@@ -95,7 +95,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # DRM Display Backend (Try setting to true first for MT8766)
-TW_USE_EXTERNAL_DRM := true
+TW_USE_EXTERNAL_DRM := false
 
 # Screen Brightness Node (Prevents unblanking timeouts)
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
@@ -149,7 +149,7 @@ TW_INCLUDE_RECOVERY_INPUT := true
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += \
     $(TARGET_OUT_EXECUTABLES)/bootctl
 
-ARGET_RECOVERY_DEVICE_MODULES += \
+TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.boot@1.0-impl.recovery \
     android.hardware.boot@1.0-service \
     bootctrl.mt6761.recovery \
