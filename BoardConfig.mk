@@ -90,9 +90,17 @@ BOARD_TCL_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 TARGET_BOARD_PLATFORM := mt6761
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# DRM Display Backend (Try setting to true first for MT8766)
+TW_USE_EXTERNAL_DRM := true
+
+# Screen Brightness Node (Prevents unblanking timeouts)
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 150
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
