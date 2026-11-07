@@ -143,6 +143,10 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_METADATA_ENCRYPTION := true
 
+TARGET_SCREEN_WIDTH := 800
+TARGET_SCREEN_HEIGHT := 1280
+TW_NO_SCREEN_BLANK := true
+
 # Optional: Force use of system vold binaries for complex MediaTek keymaster interactions if decryption fails later
 # TW_CRYPTO_USE_SYSTEM_VOLD := true
 
