@@ -97,6 +97,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 # DRM Display Backend (Try setting to true first for MT8766)
 TW_USE_EXTERNAL_DRM := false
 
+# Force minui to rely on legacy framebuffer linelength and single buffering
+RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
+RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
+
 # Screen Brightness Node (Prevents unblanking timeouts)
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
