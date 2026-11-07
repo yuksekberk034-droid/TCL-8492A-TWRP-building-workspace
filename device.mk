@@ -22,6 +22,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6761
 
+# For TCL Tab 10L Gen 2 (800 x 1280 panel)
+TW_THEME := portrait_mdpi
+
 #PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     #bootctrl.mt6761 \
     #libgptutils \
