@@ -97,14 +97,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 # DRM Display Backend (Try setting to true first for MT8766)
 TW_USE_EXTERNAL_DRM := false
 
-# Force minui to rely on legacy framebuffer linelength and single buffering
-RECOVERY_GRAPHICS_FORCE_SINGLE_BUFFER := true
-RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
-
 # Screen Brightness Node (Prevents unblanking timeouts)
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 200
+TW_DEFAULT_BRIGHTNESS := 155
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -116,7 +112,7 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
-# Hack: prevent anti rollbackW_THEME := portrait_hdpi
+# Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
@@ -138,10 +134,6 @@ TW_EXCLUDE_NANO := true
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := false # Disable NTFS if you only use FAT32/exFAT OTG/SD cards
-
-TARGET_SCREEN_WIDTH := 800
-TARGET_SCREEN_HEIGHT := 1280
-TW_NO_SCREEN_BLANK := true
 
 # Optional: Force use of system vold binaries for complex MediaTek keymaster interactions if decryption fails later
 # TW_CRYPTO_USE_SYSTEM_VOLD := true
