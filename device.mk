@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6761
 
+# Inherit standard A/B slot configuration rules
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+PRODUCT_PACKAGES += bootctl
+
 # For TCL Tab 10L Gen 2 (800 x 1280 panel)
 TW_THEME := portrait_mdpi
 
