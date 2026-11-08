@@ -22,6 +22,7 @@ AB_OTA_PARTITIONS += \
     vendor
 BOARD_USES_RECOVERY_AS_BOOT := true
 FOX_AB_DEVICE := true
+TW_RECOVERY_ADD_BOOT_CONTROL := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -125,6 +126,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RECOVERY_SERVICES := true
+TW_HAS_MTP := true
 
 # Size Reduction Flags
 TW_EXCLUDE_DEFAULT_USB_INIT := true
