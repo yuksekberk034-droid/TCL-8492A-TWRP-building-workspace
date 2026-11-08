@@ -12,6 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit standard A/B slot configuration rules
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+PRODUCT_PACKAGES += bootctl
+
 # Inherit from 8492A device
 $(call inherit-product, device/tcl/8492A/device.mk)
 
